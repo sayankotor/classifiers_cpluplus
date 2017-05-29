@@ -14,13 +14,13 @@ public:
            * output.
            *    * @param[in]  featureValues  A vector of feature values
            *    * @return     MVA classifier value    */
-    virtual std::vector<double> getClassifierValue(const std::vector<double>& featureValues) = 0;
+    virtual std::vector<double> getClassifierValues(const std::vector<double>& featureValues) = 0;
 };
 
 class XGBClassifierPID : public IClassifier {
   public:
     XGBClassifierPID();
-    std::vector<double> getClassifierValue(const std::vector<double>& featureValues) override;
+    std::vector<double> getClassifierValues(const std::vector<double>& featureValues) override;
     void setPath(const std::string& path);
 
   private:

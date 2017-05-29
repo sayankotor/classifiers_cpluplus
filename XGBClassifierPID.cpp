@@ -18,7 +18,7 @@ void XGBClassifierPID::setPath(const std::string& path)
   XGBoosterLoadModel(m_booster, path.c_str());
 }
 
-std::vector<double> XGBClassifierPID::getClassifierValue(const std::vector<double>& featureValues)
+std::vector<double> XGBClassifierPID::getClassifierValues(const std::vector<double>& featureValues)
 {
   // currently XGBoost only supports float
   std::vector<float> features_f(featureValues.begin(), featureValues.end());

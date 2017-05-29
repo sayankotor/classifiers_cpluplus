@@ -26,15 +26,16 @@ int main(int argc, char *argv[])
     }
 
     std::vector<std::vector<double>> res;
+    res.reserve(test_data.size());
     try{
         for (auto feature_vector_it = test_data.begin(); feature_vector_it < test_data.end(); feature_vector_it++){
-             res.push_back(a.getClassifierValue(*feature_vector_it));
+             res.push_back(a.getClassifierValues(*feature_vector_it));
         }
     }
     catch(...){}
     std::cout<<res.size();
     ofstream out_csv;
-    out_csv.open("/home/sayankotor/works/QtProjects/XGBplus/cplus_pred.csv");
+    out_csv.open("/home/sayankotor/works/QtProjects/XGBplus/cplus_pred1.csv");
     for (int i =0; i<res.size(); i++){
         strtk::write_to_text_file(out_csv, res[i], ",");
         out_csv<<"\r\n";
